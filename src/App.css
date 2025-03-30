@@ -1,0 +1,345 @@
+:root {
+  --primary-color: #9945FF;
+  --secondary-color: #14F195;
+  --accent-color: #6b21a8;
+  --background-color: #121212;
+  --surface-color: #1f1f1f;
+  --surface-color-light: #2d2d2d;
+  --text-color: #ffffff;
+  --text-color-secondary: #c2c2c2;
+  --error-color: #ff4d4d;
+  --success-color: #4caf50;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 0;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--surface-color-light);
+}
+
+.app-header h1 {
+  margin: 0;
+  color: var(--primary-color);
+  font-size: 1.8rem;
+}
+
+.wallet-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.wallet-info {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-color-secondary);
+}
+
+.wallet-info a {
+  color: var(--primary-color);
+  text-decoration: none;
+  margin-left: 0.5rem;
+}
+
+.app-main {
+  display: flex;
+  flex: 1;
+  gap: 2rem;
+}
+
+.sidebar {
+  width: 250px;
+  flex-shrink: 0;
+}
+
+.wallet-balance {
+  background-color: var(--surface-color);
+  padding: 1.25rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.wallet-balance h3 {
+  margin-top: 0;
+  color: var(--secondary-color);
+  font-size: 1.1rem;
+}
+
+.sol-balance {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.airdrop-button {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 1rem;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.airdrop-button:hover {
+  background-color: var(--primary-color);
+}
+
+.airdrop-button:disabled {
+  background-color: var(--surface-color-light);
+  cursor: not-allowed;
+}
+
+.content {
+  flex: 1;
+  background-color: var(--surface-color);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.app-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.nav-button {
+  padding: 0.85rem 1.25rem;
+  background-color: var(--surface-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  text-align: left;
+  transition: background-color 0.2s;
+}
+
+.nav-button:hover {
+  background-color: var(--surface-color-light);
+}
+
+.nav-button.active {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 600;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text-color-secondary);
+  font-size: 0.9rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--surface-color-light);
+  border: 1px solid #3d3d3d;
+  border-radius: 6px;
+  color: var(--text-color);
+  font-size: 1rem;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(153, 69, 255, 0.2);
+}
+
+.create-token-btn,
+.mint-token-btn,
+.transfer-token-btn {
+  padding: 0.85rem 1.5rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.create-token-btn:hover,
+.mint-token-btn:hover,
+.transfer-token-btn:hover {
+  background-color: var(--accent-color);
+}
+
+.create-token-btn:disabled,
+.mint-token-btn:disabled,
+.transfer-token-btn:disabled {
+  background-color: var(--surface-color-light);
+  cursor: not-allowed;
+}
+
+.token-created {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: var(--surface-color-light);
+  border-radius: 8px;
+  border-left: 4px solid var(--success-color);
+}
+
+.token-created h3 {
+  margin-top: 0;
+  color: var(--success-color);
+}
+
+.token-created a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.token-created a:hover {
+  text-decoration: underline;
+}
+
+.token-balance-info {
+  margin: -1rem 0 1.5rem;
+  padding: 0.75rem 1rem;
+  background-color: var(--surface-color-light);
+  border-radius: 6px;
+  color: var(--secondary-color);
+  font-weight: 500;
+}
+
+.transaction-history {
+  width: 100%;
+}
+
+.transaction-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.transaction-table th,
+.transaction-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--surface-color-light);
+}
+
+.transaction-table th {
+  color: var(--text-color-secondary);
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.transaction-table .status.success {
+  color: var(--success-color);
+}
+
+.transaction-table .status.error {
+  color: var(--error-color);
+}
+
+.transaction-table .signature {
+  font-family: monospace;
+}
+
+.explorer-link {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.explorer-link:hover {
+  text-decoration: underline;
+}
+
+.app-footer {
+  margin-top: 2rem;
+  padding: 2rem 0;
+  text-align: center;
+  color: var(--text-color-secondary);
+  font-size: 0.9rem;
+  border-top: 1px solid var(--surface-color-light);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .app-main {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  
+  .app-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .nav-button {
+    flex: 1;
+    text-align: center;
+    padding: 0.75rem 0.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .wallet-balance .sol-balance {
+    font-size: 1.5rem;
+  }
+}
+
+/* Override react-notifications styles */
+.notification-container {
+  z-index: 9999;
+}
+
+.notification {
+  background-color: var(--surface-color) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+  border-radius: 8px !important;
+}
+
+.notification-info {
+  background-color: var(--accent-color) !important;
+}
+
+.notification-success {
+  background-color: var(--success-color) !important;
+}
+
+.notification-error {
+  background-color: var(--error-color) !important;
+}
